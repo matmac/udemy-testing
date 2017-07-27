@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class CommentBox extends Component {
   constructor(props) {
@@ -21,10 +22,10 @@ class CommentBox extends Component {
         <textarea cols="30" rows="10"
           value={this.state.comment}
           onChange={this.handleChange.bind(this)}></textarea>
-        <button>Submit comment</button>
+        <button action="submit">Submit comment</button>
       </form>
     );
   }
 }
 
-export default CommentBox;
+export default connect()(CommentBox);
